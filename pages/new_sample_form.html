@@ -104,6 +104,17 @@
           numberError.textContent = "Phone number is incorrect";
         }
       });
+      //validate Password
+      const password = document.querySelector("#pwd");
+      const passwordEror = document.querySelector(".pwd-error");
+      password.addEventListener("input", function () {
+        let passwordRegex = RegExp("(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[#$%^&-+@]).{8,}");
+        if (passwordRegex.test(password.value)) {
+          passwordEror.textContent = "";
+        } else {
+          passwordEror.textContent = "Password is incorrect";
+        }
+      });
 
       const salary = document.querySelector("#salary");
       const output = document.querySelector(".salary-output");
